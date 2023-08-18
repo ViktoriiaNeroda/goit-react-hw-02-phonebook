@@ -3,7 +3,7 @@ import { Formik } from 'formik';
 import { Title, ContactFormStyled, StyledInput, StyledLabel, ErrorText, AddBtn } from './Form.styled';
 import * as Yup from 'yup';
 
-export function ContactForm({ onSubmit, reset }) {
+export function ContactForm({ onSubmit, formikBag }) {
   const validationSchema = Yup.object().shape({
     name: Yup.string()
       .required('Name is required')

@@ -29,3 +29,11 @@ export const StyledFilter = styled.input`
     padding: 4px 8px;
     display: flex;
     margin: 0 auto;`
+
+    export const DeleteBtn = styled.button`
+    background-color: #F6F4EB;
+  color: #2F4F4F;
+  font-size: 14px;
+  padding: 4px;
+  margin-left: 6px;
+`;

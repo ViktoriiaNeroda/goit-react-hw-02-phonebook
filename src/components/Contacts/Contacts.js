@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { StyledContact, StyledFilter, StyledList, StyledTextFilter, Title } from './Contacts.styled';
+import { DeleteBtn, StyledContact, StyledFilter, StyledList, StyledTextFilter, Title } from './Contacts.styled';
 
-export function ContactsList({ contacts }) {
+export function ContactsList({ contacts, onDeleteContact }) {
     
 const [searchText, setSearchText] = useState('');
   const filteredContacts = contacts.filter(contact =>
@@ -24,12 +24,13 @@ const [searchText, setSearchText] = useState('');
           placeholder="Search by name"></StyledFilter>
         </div>
           <StyledList>
-             {filteredContacts.map(contact => (
+          {filteredContacts.map(contact => (
             <StyledContact key={contact.id}>
-            {contact.name}: {contact.number}
+              {contact.name}: {contact.number}
+           <DeleteBtn onClick={() => onDeleteContact(contact.id)}>Delete</DeleteBtn>
             </StyledContact>
-           ))}
-         </StyledList>
+          ))}
+      </StyledList>
       </>
   );
 }

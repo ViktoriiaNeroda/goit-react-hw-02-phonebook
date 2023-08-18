@@ -40,4 +40,5 @@ export const AddBtn = styled.button`
   color: #2F4F4F;
   font-size: 16px;
   padding: 8px;
+ 
 `;
